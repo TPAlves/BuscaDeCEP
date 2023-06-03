@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEP</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+  <div class="container col-md-5">
+    <form>
+      <div class="form-group font-weight-bold">
+        <label>CEP</label> <span class="erro"></span> <br>
+        <input type="text" id="cep" pattern="\d{5}-?\d{3}" class="form-control" onkeypress="javascript:limparCampoCEP()"
+          placeholder="Insira o seu CEP">
+      </div>
+      <div class="form-group font-weight-bold">
+        <label>Rua</label>
+        <input type="text" class="form-control" id="rua" placeholder="...">
+      </div>
+      <div class="form-group font-weight-bold">
+        <label>Complemento</label>
+        <input type="text" class="form-control" id="complemento" placeholder="...">
+      </div>
+      <div class="form-group font-weight-bold">
+        <label>Bairro</label>
+        <input type="text" class="form-control" id="bairro" placeholder="...">
+      </div>
+      <div class="form-group font-weight-bold">
+        <label>Cidade</label>
+        <input type="text" class="form-control" id="cidade" placeholder="...">
+      </div>
+      <div class="form-group font-weight-bold">
+        <label>Estado</label>
+        <input type="text" class="form-control" id="estado" placeholder="...">
+      </div>
+      <button type="submit" id="btnPesquisar" class="btn btn-primary">Pesquisa</button>
+      <button type="reset" id="btnLimpar" class="btn btn-danger">Limpar</button>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
