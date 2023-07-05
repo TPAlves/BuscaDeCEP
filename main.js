@@ -3,16 +3,18 @@ const inputCep = document.querySelector("#cep");
 
 const erro = document.querySelector(".erro");
 
+inputCep.addEventListener("input", (e) => {
+    inputCep.value = e.target.value.replace(/[^0-9.]/g, '').
+        replace(/(\..*?)\..*/g, '$1');
+});
 
 btnPesquisarCEP.addEventListener("click", event => {
     event.preventDefault();
     const valorCEP = inputCep.value;
-    console.log(valorCEP.length);
+    
     if (valorCEP.length == 0) {
-
-        inputCep.style.border = "2px solid red";
+        inputCep.style.border = "2px solid rgb(216, 88, 88)";
         erro.innerText = "Campo obrigatório";
-
         return false;
     }
 
@@ -42,6 +44,10 @@ function atribuitCampos(data) {
     const cidade = document.querySelector("#cidade");
     const estado = document.querySelector("#estado");
 
+    if (data.logradouro === undefined) {
+        alert("CEP inválido");
+        return;
+    }
 
     rua.value = data.logradouro;
     complemento.value = data.complemento;
